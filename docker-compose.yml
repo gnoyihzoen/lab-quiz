@@ -41,12 +41,30 @@ services:
     networks:
       - app_net
 
+  sonarqube:
+    image: sonarqube:latest
+    container_name: sonarqube
+    ports:
+      - "9000:9000"
+    environment:
+      - SONAR_FORCEAUTHENTICATION=true
+      - SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true
+    volumes:
+      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_extensions:/opt/sonarqube/extensions
+    networks:
+      - app_net
+
 volumes:
   gitea_data:
+  sonarqube_data:
+  sonarqube_extensions:
 
 networks:
   app_net:
     driver: bridge
 
+# sqp_bdf57983d2f0450381ea2b603c99094cd05278c8
+# Admin123!123
 
 
