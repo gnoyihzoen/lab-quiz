@@ -44,10 +44,10 @@ jobs:
         RESPONSE=$(curl -s -L --data-urlencode "password=D$3g8r!qZb" http://127.0.0.1:5000)
         echo "$RESPONSE" | grep "Welcome" || { echo "Login failed"; exit 1; }
 
-      - name: Run Pytest Tests
-        working-directory: ./web
-        run: |
-          pytest -v
+    - name: Run Pytest Tests
+      working-directory: ./web
+      run: |
+        pytest -v
 
 
 
