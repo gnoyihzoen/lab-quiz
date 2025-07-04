@@ -64,7 +64,4 @@ networks:
   app_net:
     driver: bridge
 
-# sqp_bdf57983d2f0450381ea2b603c99094cd05278c8
-# Admin123!123
-
 
