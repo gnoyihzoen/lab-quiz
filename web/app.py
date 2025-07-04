@@ -1,8 +1,10 @@
 from flask import Flask, request, redirect, session, render_template_string
 import re
+import os
+
 
 app = Flask(__name__)
-app.secret_key = "your-secret-key"  # For session management
+app.secret_key = os.getenv("SECRET_KEY", "default-unsafe-key")
 
 # Load common passwords
 with open("10-million-password-list-top-1000.txt", "r") as f:
