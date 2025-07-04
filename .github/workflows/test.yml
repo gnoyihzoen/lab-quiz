@@ -41,8 +41,9 @@ jobs:
           exit 1
         fi
 
-        RESPONSE=$(curl -s -X POST -d "password=D\$3g8r!qZb" http://127.0.0.1:5000)
-        echo "$RESPONSE" | grep "Welcome"
+        RESPONSE=$(curl -s -L -X POST -d "password=D\$3g8r!qZb" http://127.0.0.1:5000)
+        echo "$RESPONSE" | grep "Welcome" || { echo "Login failed"; exit 1; }
+
 
 
 
