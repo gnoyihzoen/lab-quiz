@@ -25,6 +25,7 @@ jobs:
         pip install -r web/requirements.txt
 
     - name: Start Flask App in Background
+      working-directory: ./web
       run: |
         export FLASK_APP=app.py
         export FLASK_ENV=development

@@ -14,11 +14,11 @@ services:
     ports:
       - "8000:5000"
     entrypoint: ["python", "app.py"]
-    
+
   nginx:
     image: nginx:latest
     container_name: nginx-proxy
-    ports:
+    ports:  
       - "80:80"
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
