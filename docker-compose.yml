@@ -14,7 +14,7 @@ services:
     ports:
       - "8000:5000"
     entrypoint: ["python", "app.py"]
-
+    
   nginx:
     image: nginx:latest
     container_name: nginx-proxy
@@ -47,3 +47,6 @@ volumes:
 networks:
   app_net:
     driver: bridge
+
+
+
